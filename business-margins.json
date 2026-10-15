@@ -1,110 +1,42 @@
 [
   [
-    "Egg Center – Wholesale cum Retail",
-    10
-  ],
-  [
-    "Cool Drinks / Water Bottles Shop",
-    10
-  ],
-  [
-    "Bangle Selling – Wholesale cum Retail",
-    10
-  ],
-  [
-    "Sewing Machine Sales & Repair",
-    15
-  ],
-  [
-    "Gym Supplements Shop",
-    20
-  ],
-  [
-    "Tyre Sales Shop",
-    20
-  ],
-  [
-    "Snacks / Namkeen",
-    20
-  ],
-  [
     "General Store",
     25
   ],
   [
-    "Jewellery Store",
-    25
-  ],
-  [
-    "Fertilizers, Pesticides & Seeds Shop",
-    25
-  ],
-  [
-    "Sanitary Store",
-    25
-  ],
-  [
-    "Tiles & Marbles Sales",
-    25
-  ],
-  [
-    "Steel / Iron Almirah Shop",
-    25
-  ],
-  [
-    "Building & Construction Materials Shop",
-    25
-  ],
-  [
-    "Repair / Garages – Four Wheeler & Above",
-    25
-  ],
-  [
-    "Musical Instruments",
-    25
-  ],
-  [
-    "General Store – Wholesale cum Retail",
-    25
-  ],
-  [
-    "Tent Shop / Lighting / Decoration",
-    25
-  ],
-  [
-    "Meat Shop – Chicken, Mutton & Seafood",
-    25
-  ],
-  [
-    "Rice / Wheat / Pulses – Wholesale cum Retail",
-    28
-  ],
-  [
-    "Hardware Shop",
-    29
-  ],
-  [
-    "Steel / Plastic Shop",
-    29
-  ],
-  [
-    "Agriculture Equipment Sales",
-    29
-  ],
-  [
-    "Garments Store – Wholesale cum Retail",
+    "Garments Store",
     30
+  ],
+  [
+    "Hotel",
+    39
+  ],
+  [
+    "Hair Saloon / Beauty Parlour",
+    50
   ],
   [
     "Mobile Phone & Accessories",
     30
   ],
   [
-    "Accessories – Two & Four Wheeler",
+    "Fancy Store",
+    34
+  ],
+  [
+    "Accessories (2 & 4 Wheeler) Sales",
     30
   ],
   [
-    "Medical Shop – Wholesale cum Retail",
+    "Meat Shop",
+    29
+  ],
+  [
+    "Tailoring Shop",
+    35
+  ],
+  [
+    "Medical Shop",
     30
   ],
   [
@@ -112,56 +44,8 @@
     30
   ],
   [
-    "Bakery",
-    30
-  ],
-  [
-    "Sweet Shop",
-    30
-  ],
-  [
-    "Dairy Parlor",
-    30
-  ],
-  [
-    "Gift Article Shop",
-    30
-  ],
-  [
-    "Household Items",
-    30
-  ],
-  [
-    "Flour Mill",
-    30
-  ],
-  [
-    "Bicycle Sales & Accessories",
-    30
-  ],
-  [
-    "Glass Sales & Service",
-    30
-  ],
-  [
-    "Animal Feeds",
-    30
-  ],
-  [
-    "Fruit Juice Shop",
-    30
-  ],
-  [
-    "Ice Cream Shop",
-    30
-  ],
-  [
-    "Home Cleaning Materials Shop",
-    30
-  ],
-  [
-    "Fancy Store – Wholesale cum Retail",
-    34
+    "Jewellery Store",
+    25
   ],
   [
     "Furniture Shop",
@@ -169,10 +53,22 @@
   ],
   [
     "Electronic Shop",
-    34
+    24
   ],
   [
-    "Fabrication",
+    "Electrical Shop",
+    30
+  ],
+  [
+    "Bakery",
+    30
+  ],
+  [
+    "Meat Shop - Chicken/Mutton/Seafood",
+    25
+  ],
+  [
+    "Fabrication & Welding Works",
     34
   ],
   [
@@ -180,12 +76,120 @@
     34
   ],
   [
-    "Home Interior & Decorative Items",
+    "Sweet Shop",
+    30
+  ],
+  [
+    "Stationery Shop",
+    30
+  ],
+  [
+    "Dairy Parlour",
+    30
+  ],
+  [
+    "Gift Article Shop",
+    30
+  ],
+  [
+    "Steel / Plastic Shop",
+    29
+  ],
+  [
+    "Photo Studio",
+    35
+  ],
+  [
+    "Household Items",
+    30
+  ],
+  [
+    "Text House / Lighting / Decor",
+    25
+  ],
+  [
+    "Fertilizers, Pesticides & Seeds",
+    25
+  ],
+  [
+    "Pan Shop",
+    39
+  ],
+  [
+    "Flour Mill",
+    30
+  ],
+  [
+    "Scrap Shop",
+    35
+  ],
+  [
+    "Bicycle Sales & Accessories",
+    30
+  ],
+  [
+    "Ladies' Work (Bags, Scarf, Covers)",
+    35
+  ],
+  [
+    "Home Interior & Decorative",
     34
   ],
   [
     "Pooja Items",
     34
+  ],
+  [
+    "Printing Press",
+    39
+  ],
+  [
+    "Computer & Radium Arts",
+    35
+  ],
+  [
+    "Photo Shop",
+    40
+  ],
+  [
+    "Dress Stalls & Service",
+    30
+  ],
+  [
+    "Disposable Items",
+    34
+  ],
+  [
+    "Floreness Works",
+    49
+  ],
+  [
+    "Flowers / Flower Bouquets",
+    49
+  ],
+  [
+    "Sanitary Store",
+    25
+  ],
+  [
+    "Bakeries Work",
+    39
+  ],
+  [
+    "Rice / Wheat / Pulses Shop",
+    28
+  ],
+  [
+    "Animal Feeds",
+    30
+  ],
+  [
+    "Optical Shop",
+    35
+  ],
+  [
+    "Dry Fruits & Nuts",
+    39
   ],
   [
     "Sports & Fitness Goods",
@@ -196,72 +200,8 @@
     34
   ],
   [
-    "Water Filter / Purifier Sales",
-    34
-  ],
-  [
-    "Toy Store",
-    34
-  ],
-  [
-    "Fabrication & Welding Works",
-    34
-  ],
-  [
-    "Tailoring Shop",
-    35
-  ],
-  [
-    "Photo Studio",
-    35
-  ],
-  [
-    "Scrap Shop",
-    35
-  ],
-  [
-    "Leather Work – Bags, Seat Covers, etc.",
-    35
-  ],
-  [
-    "Car Decors & Radium Arts",
-    35
-  ],
-  [
-    "Optical Shop",
-    35
-  ],
-  [
-    "Disposable Items – Wholesale cum Retail",
-    38
-  ],
-  [
-    "Dry Fruits & Nuts",
-    38
-  ],
-  [
-    "Hotel",
-    39
-  ],
-  [
-    "Electrical Shop",
-    39
-  ],
-  [
-    "Stationery Shop – Wholesale cum Retail",
-    39
-  ],
-  [
-    "Pan Shop",
-    39
-  ],
-  [
-    "Printing Press",
-    39
-  ],
-  [
-    "Batteries Work",
-    39
+    "Coconut Sales",
+    47
   ],
   [
     "Tea & Snacks",
@@ -272,39 +212,171 @@
     39
   ],
   [
-    "Battery & Solar Panel Sales",
-    39
+    "Fruit Juice Shop (Max 1 Lakh)",
+    30
   ],
   [
-    "Paint Shop",
+    "Ice-Cream Shop",
+    30
+  ],
+  [
+    "Gym Supplements Shop",
+    20
+  ],
+  [
+    "Cool Drinks / Water Bottles",
     40
   ],
   [
-    "Mattresses Works",
-    43
+    "Tins & Marble Sales",
+    25
   ],
   [
-    "Coconut Sales",
-    47
+    "Home Cleaning Material Shop",
+    30
   ],
   [
-    "Flowers / Flower Bouquet",
-    49
+    "Water Filter / Purifier Sales",
+    34
   ],
   [
-    "Hair Salon / Beauty Parlour",
+    "Steel / Iron Almirah Shop",
+    25
+  ],
+  [
+    "Building & Construction Material",
+    25
+  ],
+  [
+    "Tyre Sales Shop",
+    20
+  ],
+  [
+    "Solar / Solar Panel Sales",
+    39
+  ],
+  [
+    "Diagnostic Centre (Max 1 Lakh)",
     50
   ],
   [
-    "Diagnostic Centre",
-    50
+    "Car Service",
+    34
   ],
   [
-    "Bangle Making & Selling",
+    "Agriculture Equipment Sales",
+    29
+  ],
+  [
+    "Snacks / Namkeen - Retail",
+    20
+  ],
+  [
+    "Snacks / Namkeen - Wholesale",
     10
   ],
   [
-    "Electrical Service & Repair Works",
+    "Sewing Machine Sales & Repair",
+    15
+  ],
+  [
+    "Repair / Garages (4W & above)",
+    25
+  ],
+  [
+    "Air Coolers / Furnaces",
+    25
+  ],
+  [
+    "General Store (W/R) - Retail",
+    25
+  ],
+  [
+    "General Store (W/R) - Wholesale",
+    10
+  ],
+  [
+    "Garments Store (W/R) - Retail",
+    30
+  ],
+  [
+    "Garments Store (W/R) - Wholesale",
+    12
+  ],
+  [
+    "Medical (W/R) - Retail",
+    30
+  ],
+  [
+    "Medical (W/R) - Wholesale",
+    10
+  ],
+  [
+    "Stationery (W/R) - Retail",
+    30
+  ],
+  [
+    "Stationery (W/R) - Wholesale",
+    10
+  ],
+  [
+    "Disposable Items (W/R) - Retail",
+    38
+  ],
+  [
+    "Disposable Items (W/R) - Wholesale",
+    10
+  ],
+  [
+    "Cool Drinks (W/R) - Retail",
+    10
+  ],
+  [
+    "Cool Drinks (W/R) - Wholesale",
+    8
+  ],
+  [
+    "Raw Materials/Packs (W/R) - Retail",
+    20
+  ],
+  [
+    "Raw Materials/Packs (W/R) - Wholesale",
+    8
+  ],
+  [
+    "Bangles Selling (W/R) - Retail",
+    40
+  ],
+  [
+    "Bangles Selling (W/R) - Wholesale",
+    15
+  ],
+  [
+    "EGG Centre (W/R) - Retail",
+    10
+  ],
+  [
+    "EGG Centre (W/R) - Wholesale",
+    8
+  ],
+  [
+    "Fancy Store (W/R) - Retail",
+    43
+  ],
+  [
+    "Fancy Store (W/R) - Wholesale",
+    15
+  ],
+  [
+    "Bangle Nesting & Selling - Retail",
+    10
+  ],
+  [
+    "Bangle Nesting & Selling - Wholesale",
+    8
+  ],
+  [
+    "Electrical Service & Repair",
     35
   ],
   [
@@ -320,7 +392,7 @@
     35
   ],
   [
-    "Canteen in Government Premises",
+    "Canteen in Govt Premises",
     30
   ],
   [
@@ -332,19 +404,19 @@
     40
   ],
   [
-    "Tailoring Services (Bulk Orders)",
+    "Tailoring Services (Bulk Order)",
     20
   ],
   [
-    "Gold Ornaments (Making/Wholesale/Retail)",
+    "Cold Ornaments (W/R)",
     25
   ],
   [
-    "Silver Ornaments (Making/Wholesale/Retail)",
+    "Silver Ornaments (W/R)",
     25
   ],
   [
-    "RO Water Sale",
+    "RO Water Sales",
     30
   ],
   [
@@ -356,3 +428,4 @@
     20
   ]
 ]
+
