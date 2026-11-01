@@ -1,0 +1,109 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function admin() {
+      return signedIn() && exists(/databases/$(database)/documents/adminRoles/$(request.auth.uid))
+        && get(/databases/$(database)/documents/adminRoles/$(request.auth.uid)).data.admin == true;
+    }
+    function approved() {
+      return admin() || (signedIn() && request.auth.token.email_verified == true
+        && exists(/databases/$(database)/documents/accountAccess/$(request.auth.uid))
+        && get(/databases/$(database)/documents/accountAccess/$(request.auth.uid)).data.status == 'approved');
+    }
+    match /accountAccess/{uid} {
+      allow get: if admin() || (signedIn() && request.auth.uid == uid);
+      allow list: if admin();
+      allow create: if signedIn() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['uid','email','status','requestedAt','updatedAt'])
+        && request.resource.data.uid == uid && request.resource.data.email == request.auth.token.email
+        && request.resource.data.status == 'pending'
+        && request.resource.data.requestedAt == request.time && request.resource.data.updatedAt == request.time;
+      allow update: if admin()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','updatedAt'])
+        && request.resource.data.status in ['approved','blocked'] && request.resource.data.updatedAt == request.time;
+      allow delete: if false;
+    }
+    match /adminRoles/{uid} {
+      allow get: if signedIn() && request.auth.uid == uid;
+      allow list, write: if false;
+    }
+    match /accounts/{uid} {
+      allow get: if admin() || (signedIn() && request.auth.uid == uid);
+      allow list: if admin();
+      allow create, update: if signedIn() && request.auth.uid == uid
+        && request.auth.token.email is string
+        && request.resource.data.keys().hasOnly(['uid','email','verified','createdAt','lastSeenAt','online'])
+        && request.resource.data.uid == uid
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.verified == request.auth.token.email_verified
+        && request.resource.data.online is bool
+        && request.resource.data.lastSeenAt == request.time
+        && ((!exists(/databases/$(database)/documents/accounts/$(uid)) && request.resource.data.createdAt == request.time)
+          || (exists(/databases/$(database)/documents/accounts/$(uid)) && request.resource.data.createdAt == resource.data.createdAt));
+      allow delete: if false;
+    }
+    match /toolAccess/{uid} {
+      allow get: if admin() || (signedIn() && request.auth.uid == uid);
+      allow list: if admin();
+      allow create, update: if admin()
+        && request.resource.data.keys().hasOnly(['challan','income','updatedAt'])
+        && request.resource.data.challan is bool && request.resource.data.income is bool
+        && request.resource.data.updatedAt == request.time;
+      allow delete: if false;
+    }
+    match /accountLogs/{id} {
+      allow read: if admin();
+      allow create: if signedIn() && request.auth.token.email is string
+        && request.resource.data.keys().hasOnly(['uid','email','event','at'])
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.event in ['created','login','logout']
+        && request.resource.data.at == request.time;
+      allow update, delete: if false;
+    }
+    match /settings/{key} {
+      allow get: if key in ['margins','notice','adminLogin'];
+      allow list: if false;
+      allow create, update: if admin() && (
+        (key == 'margins' && request.resource.data.keys().hasOnly(['entries','updatedAt'])
+          && request.resource.data.entries is list && request.resource.data.entries.size() <= 500
+          && request.resource.data.updatedAt == request.time)
+        || (key == 'notice' && request.resource.data.keys().hasOnly(['text','updatedAt'])
+          && request.resource.data.text is string && request.resource.data.text.size() <= 500
+          && request.resource.data.updatedAt == request.time)
+        || (key == 'adminLogin' && request.resource.data.keys().hasOnly(['username','updatedAt'])
+          && request.resource.data.username is string && request.resource.data.username.matches('[a-zA-Z0-9_.-]{3,40}')
+          && request.resource.data.username.lower() != 'admin' && request.resource.data.updatedAt == request.time)
+      );
+      allow delete: if false;
+    }
+    match /issues/{id} {
+      allow read: if admin();
+      allow create: if approved()
+        && request.resource.data.keys().hasOnly(['name','message','status','ownerUid','createdAt','updatedAt'])
+        && request.resource.data.name is string && request.resource.data.name.size() > 0 && request.resource.data.name.size() <= 80
+        && request.resource.data.message is string && request.resource.data.message.size() > 0 && request.resource.data.message.size() <= 2000
+        && request.resource.data.ownerUid == request.auth.uid && request.resource.data.status == 'open'
+        && request.resource.data.createdAt == request.time && request.resource.data.updatedAt == request.time
+        && (!exists(/databases/$(database)/documents/submissionState/$(request.auth.uid))
+          || request.time >= get(/databases/$(database)/documents/submissionState/$(request.auth.uid)).data.lastSubmittedAt + duration.value(60,'s'))
+        && getAfter(/databases/$(database)/documents/submissionState/$(request.auth.uid)).data.lastSubmittedAt == request.time
+        && getAfter(/databases/$(database)/documents/submissionState/$(request.auth.uid)).data.lastIssueId == id;
+      allow update: if admin() && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status','updatedAt'])
+        && request.resource.data.status in ['open','closed'] && request.resource.data.updatedAt == request.time;
+      allow delete: if false;
+    }
+    match /submissionState/{uid} {
+      allow get: if signedIn() && request.auth.uid == uid;
+      allow list, delete: if false;
+      allow create, update: if signedIn() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['lastIssueId','lastSubmittedAt'])
+        && request.resource.data.lastIssueId is string && request.resource.data.lastSubmittedAt == request.time
+        && (!exists(/databases/$(database)/documents/submissionState/$(uid))
+          || request.time >= resource.data.lastSubmittedAt + duration.value(60,'s'))
+        && getAfter(/databases/$(database)/documents/issues/$(request.resource.data.lastIssueId)).data.ownerUid == uid
+        && getAfter(/databases/$(database)/documents/issues/$(request.resource.data.lastIssueId)).data.createdAt == request.time;
+    }
+  }
+}
