@@ -101,9 +101,6 @@
     document.documentElement.requestFullscreen({navigationUI:'hide'}).catch(()=>{});
   }
   document.querySelector('#login-form').addEventListener('submit',enterMobileFullscreen,true);
-  appShell.addEventListener('click',event=>{
-    if(event.target.closest('[data-open-tool],.admin-hub-card'))enterMobileFullscreen();
-  },true);
 
   const header=document.querySelector('.app-header');
   new ResizeObserver(()=>document.documentElement.style.setProperty('--cash-header-offset',(header.offsetHeight+(parseFloat(getComputedStyle(header).top)||0))+'px')).observe(header);
