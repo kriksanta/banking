@@ -24,11 +24,4 @@
     if (event.data?.type === 'cash-tool-back') frame.closest('.tool-panel').querySelector('[data-back-to-menu]').click();
   });
   loadVisibleFrames();
-  document.querySelector('#logout-app').addEventListener('click', lockChallan);
-  document.querySelector('#admin-sign-out').addEventListener('click', lockChallan);
-  function lockChallan() {
-    sessionStorage.removeItem('cashToolChallanUnlocked');
-    const frame = document.querySelector('#tool-challan iframe');
-    frame.contentWindow?.postMessage({type: 'cash-tool-lock-challan'}, location.origin === 'null' ? '*' : location.origin);
-  }
 })();
