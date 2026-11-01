@@ -57,7 +57,6 @@
     document.querySelector('#login-password').type='password';document.querySelector('#password-toggle').setAttribute('aria-pressed','false');
     document.querySelector('#admin-account-form').reset();
   }
-  document.querySelector('#admin-sign-out').addEventListener('click',logoutAdmin);
   document.querySelector('#logout-app').addEventListener('click',logoutAdmin);
   let accountActionBusy=false;
   async function accountAction(action) {
