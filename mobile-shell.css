@@ -46,7 +46,7 @@ body #mobile-fullscreen{display:none;}
   body .tool-access-row{display:grid;grid-template-columns:1fr;gap:12px;}
   body .tool-access-row>strong{font-size:.85rem;}
   body .tool-access-row button{justify-self:start;}
-  @media(display-mode:fullscreen), (display-mode:standalone){body #mobile-fullscreen{display:none;}}
+  @media(display-mode:fullscreen){body #mobile-fullscreen{display:none;}}
 }
 
 @media(max-width:640px){

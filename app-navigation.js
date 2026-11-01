@@ -90,11 +90,21 @@
   fullscreen.addEventListener('click',async()=>{
     try {
       if(document.fullscreenElement)await document.exitFullscreen();
-      else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();
+      else if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen({navigationUI:'hide'});
       else document.querySelector('#install-help').showModal();
     }catch{document.querySelector('#install-help').showModal();}
   });
   document.addEventListener('fullscreenchange',()=>fullscreen.setAttribute('aria-label',document.fullscreenElement?'Exit full screen':'Full screen'));
+  // Request immersive mode during the user's tap, before asynchronous sign-in.
+  function enterMobileFullscreen(){
+    if(!matchMedia('(max-width:640px), (pointer:coarse)').matches||document.fullscreenElement||!document.fullscreenEnabled)return;
+    document.documentElement.requestFullscreen({navigationUI:'hide'}).catch(()=>{});
+  }
+  document.querySelector('#login-form').addEventListener('submit',enterMobileFullscreen,true);
+  appShell.addEventListener('click',event=>{
+    if(event.target.closest('[data-open-tool],.admin-hub-card'))enterMobileFullscreen();
+  },true);
+
   const header=document.querySelector('.app-header');
   new ResizeObserver(()=>document.documentElement.style.setProperty('--cash-header-offset',(header.offsetHeight+(parseFloat(getComputedStyle(header).top)||0))+'px')).observe(header);
 })();
