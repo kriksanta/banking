@@ -13,7 +13,7 @@
     document.querySelector('#admin-account-form button[type="submit"]').disabled=false;
     marginSaveButton.disabled=!marginDataDirty&&!needsMarginImport;
     renderSettingsList();clearTimeout(safetyToastTimer);safetyToast.classList.remove('is-visible');showApp(true);
-    connection('Connected to Firebase · '+adminUser.username);window.scrollTo({top:0,behavior:'auto'});
+    document.querySelector('[data-admin-tab="dashboard"]').click();connection('Connected to Firebase · '+adminUser.username);window.scrollTo({top:0,behavior:'auto'});
   }
   adminPortalButton.addEventListener('click',async()=>{
     if(adminUser){if(!panel.hidden){openUserView();}else openAdmin();return;}
@@ -79,7 +79,7 @@
   document.querySelector('#reset-email-password').addEventListener('click',()=>accountAction('reset'));
   new MutationObserver(()=>{issueCard.hidden=!panel.hidden||toolMenu.hidden;}).observe(toolMenu,{attributes:true,attributeFilter:['hidden']});
   const tabs=[...document.querySelectorAll('[data-admin-tab]')];
-  function selectTab(button){tabs.forEach(tab=>{const selected=tab===button;tab.setAttribute('aria-selected',String(selected));tab.tabIndex=selected?0:-1;document.querySelector('#admin-'+tab.dataset.adminTab).hidden=!selected;});if(button.dataset.adminTab==='submissions')loadInbox();if(button.dataset.adminTab==='activity')loadActivity();}
+  function selectTab(button){tabs.forEach(tab=>{const selected=tab===button;tab.setAttribute('aria-selected',String(selected));tab.tabIndex=selected?0:-1;document.querySelector('#admin-'+tab.dataset.adminTab).hidden=!selected;});if(button.dataset.adminTab==='submissions')loadInbox();if(['activity','users'].includes(button.dataset.adminTab))loadActivity();}
   tabs.forEach(tab=>tab.addEventListener('click',()=>selectTab(tab)));
   document.querySelector('.admin-tabs').addEventListener('keydown',event=>{
     if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();let index=tabs.indexOf(document.activeElement);
@@ -110,7 +110,7 @@
     if(loadingActivity)return;
     if(!adminUser){message('account-activity-status','Sign in with your approved admin email to view accounts and logs.');return;}
     loadingActivity=true;const button=document.querySelector('#refresh-account-activity');button.disabled=true;
-    message('account-activity-status','Loading account activity…');
+    message('account-activity-status','Loading account activity…');message('users-count-status','Loading accounts…');
     try {
       const data=await(await service).accountDashboard();
       document.querySelector('#account-total').textContent=data.total;
@@ -125,12 +125,12 @@
         info.append(email,event);row.append(info,time);list.append(row);
       }
       if(!data.logs.length){const empty=document.createElement('p');empty.textContent='No activity recorded yet.';list.append(empty);}
-      message('account-activity-status','Updated '+new Date().toLocaleTimeString('en-IN')+' · latest 100 events');
-    }catch(problem){message('account-activity-status',problem.message,'error');}
+      message('account-activity-status','Updated '+new Date().toLocaleTimeString('en-IN')+' · latest 100 events');message('users-count-status','Updated '+new Date().toLocaleTimeString('en-IN'));
+    }catch(problem){message('account-activity-status',problem.message,'error');message('users-count-status',problem.message,'error');}
     finally{loadingActivity=false;button.disabled=false;}
   }
-  document.querySelector('#refresh-account-activity').addEventListener('click',loadActivity);
-  setInterval(()=>{if(!document.hidden && !panel.hidden && !document.querySelector('#admin-activity').hidden)loadActivity();},30000);
+  document.querySelector('#refresh-account-activity').addEventListener('click',loadActivity);document.querySelector('#refresh-user-accounts').addEventListener('click',loadActivity);
+  setInterval(()=>{if(!document.hidden && !panel.hidden && (!document.querySelector('#admin-activity').hidden||!document.querySelector('#admin-users').hidden))loadActivity();},30000);
   document.querySelector('#issue-form').addEventListener('submit',async event=>{
     event.preventDefault();const form=event.currentTarget,button=form.querySelector('[type="submit"]');button.disabled=true;message('issue-status','Submitting…');
     try{await(await service).submitIssue(document.querySelector('#issue-name').value,document.querySelector('#issue-description').value,document.querySelector('#issue-website').value);form.reset();message('issue-status','Your issue has been submitted. Thank you.','success');}

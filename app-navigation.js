@@ -7,7 +7,7 @@
     if(appShell.hidden)return {page:'login'};
     const dialog=[...document.querySelectorAll('dialog[open]')].find(item=>item.id);
     let route;
-    if(!adminPanel.hidden)route={page:'admin',tab:document.querySelector('[data-admin-tab][aria-selected="true"]')?.dataset.adminTab||'margins'};
+    if(!adminPanel.hidden)route={page:'admin',tab:document.querySelector('[data-admin-tab][aria-selected="true"]')?.dataset.adminTab||'dashboard'};
     else {const tool=Object.keys(toolPanels).find(key=>!toolPanels[key].hidden);route={page:tool||'home'};}
     if(dialog)route.dialog=dialog.id;
     return route;
@@ -74,7 +74,7 @@
     if(event.state?.[marker])apply(event.state.route);
   });
   document.addEventListener('click',event=>{
-    if(!event.target.closest('[data-back-to-menu]'))return;
+    if(!event.target.closest('[data-back-to-menu],[data-admin-dashboard-back]'))return;
     if(history.state?.[marker] && history.state.depth>0){event.preventDefault();event.stopImmediatePropagation();history.back();}
   },true);
   let scheduled=false;

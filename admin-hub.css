@@ -1,0 +1,26 @@
+body .admin-tabs,body .admin-section-picker{display:none!important;}
+.admin-hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:6px 0 12px;}
+body .admin-hub-card{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:150px;padding:20px 10px;border:1px solid var(--edge);border-radius:17px;background:linear-gradient(145deg,var(--paper-high),var(--paper-low));box-shadow:0 3px 0 var(--edge),0 6px 12px var(--cast),inset 0 1px var(--highlight);color:var(--ink);font:inherit;font-size:.9rem;font-weight:650;line-height:1.35;text-align:center;cursor:pointer;transition:transform .15s,box-shadow .15s;}
+body .admin-hub-card:hover{transform:translateY(-2px);box-shadow:0 4px 0 var(--edge),0 9px 16px var(--cast);}
+body .admin-hub-card:active{transform:translateY(1px);box-shadow:var(--inset);}
+.admin-hub-icon{display:grid;place-items:center;width:46px;height:46px;border-radius:13px;background:linear-gradient(145deg,#476c89,#1a3c58);color:#fff5df;box-shadow:0 2px 0 #122c40,inset 0 1px #ffffff40;}
+.admin-hub-icon svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.admin-hub-card[data-admin-open=approvals] .admin-hub-icon,.admin-hub-card[data-admin-open=permissions] .admin-hub-icon{background:linear-gradient(145deg,#668d78,#2d5947);}
+.admin-hub-card[data-admin-open=notice] .admin-hub-icon,.admin-hub-card[data-admin-open=activity] .admin-hub-icon{background:linear-gradient(145deg,#b29a66,#786137);}
+.admin-hub-pending{position:absolute;top:10px;right:10px;display:grid;place-items:center;min-width:23px;height:23px;padding:0 5px;border-radius:15px;background:#ad3030;color:#fff;font-size:.73rem;}
+.admin-section-toolbar{margin:0 0 18px;}
+body .admin-section-toolbar .tool-back{margin-bottom:0;}
+.admin-account-row{padding:15px 0;border-bottom:1px solid var(--line);font-size:.85rem;overflow-wrap:anywhere;}
+#admin-panel[data-hub-view=section] .admin-view>.admin-toolbar h3,#admin-panel[data-hub-view=section] .margin-settings-card>h2{display:none;}
+@media(max-width:640px){
+  body .admin-heading{margin-bottom:18px;}
+  body .admin-hub-grid{gap:12px;padding-top:3px;}
+  body .admin-hub-card{min-height:112px;padding:15px 5px 12px;gap:11px;border-radius:13px;font-size:.72rem;line-height:1.35;}
+  .admin-hub-icon{width:37px;height:37px;border-radius:10px;}
+  .admin-hub-icon svg{width:22px;height:22px;}
+  .admin-hub-pending{top:6px;right:6px;min-width:19px;height:19px;font-size:.65rem;}
+  .admin-section-toolbar{margin-bottom:17px;}
+  body .admin-section-toolbar .tool-back{font-size:.77rem;padding:9px 12px;}
+}
+
+body.admin-section-view .app-header{display:none!important}body.admin-section-view #admin-panel{margin-top:0}
