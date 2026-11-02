@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-01-admin-hub",
+  "version": "2026-11-02-profile-points-access",
   "backend": "firebase",
   "projectId": "cash-tool"
 }

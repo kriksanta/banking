@@ -1,32 +1,38 @@
 (() => {
-  const service=import('./firebase-service.js?v=20261101a');
-  let allowed={challan:false,income:false},stop=()=>{},generation=0,loading=false;
+  const service=import('./firebase-service.js?v=20261102c');
+  const restrictedTools=['margin','loan','challan','income'];
+  const noAccess={margin:false,loan:false,challan:false,income:false};
+  let allowed={...noAccess},stop=()=>{},generation=0,loading=false;
   const status=document.querySelector('#tool-access-status');
   function applyAccess(next) {
     allowed=next;
-    for(const tool of ['challan','income']) {
+    for(const tool of restrictedTools) {
       document.querySelector('[data-open-tool="'+tool+'"]').hidden=!next[tool];
       if(!next[tool]) {
         const panel=document.querySelector('#tool-'+tool),frame=panel.querySelector('iframe');
         if(!panel.hidden){panel.hidden=true;toolMenu.hidden=false;sessionStorage.removeItem(toolSessionKey);}
-        if(frame.hasAttribute('src'))frame.removeAttribute('src');
+        if(frame?.hasAttribute('src'))frame.removeAttribute('src');
       }
     }
   }
   async function refreshAccess() {
-    const version=++generation;stop();applyAccess({challan:false,income:false});
+    const version=++generation;stop();applyAccess({...noAccess});
     try {
       const firebase=await service;
       if(version!==generation)return;
-      stop=firebase.watchAllowedTools(next=>{if(version===generation)applyAccess(next);},()=>{if(version===generation)applyAccess({challan:false,income:false});});
-    }catch{applyAccess({challan:false,income:false});}
+      stop=firebase.watchAllowedTools(next=>{if(version===generation)applyAccess(next);},()=>{if(version===generation)applyAccess({...noAccess});});
+    }catch{applyAccess({...noAccess});}
   }
   document.addEventListener('click',event=>{
     const button=event.target.closest('[data-open-tool]');
-    if(button && ['challan','income'].includes(button.dataset.openTool) && !allowed[button.dataset.openTool]) {
+    if(button && restrictedTools.includes(button.dataset.openTool) && !allowed[button.dataset.openTool]) {
       event.preventDefault();event.stopImmediatePropagation();
     }
   },true);
+  restrictedTools.forEach(tool=>{
+    const panel=document.querySelector('#tool-'+tool);
+    new MutationObserver(()=>{if(!allowed[tool]&&!panel.hidden)applyAccess(allowed);}).observe(panel,{attributes:true,attributeFilter:['hidden']});
+  });
   window.addEventListener('cash-tool-auth-changed',refreshAccess);
   refreshAccess();
   async function loadUsers() {
@@ -41,7 +47,7 @@
         const row=document.createElement('div');row.className='tool-access-row';
         const email=document.createElement('strong');email.textContent=user.email;row.append(email);
         const fields={};
-        for(const [tool,name] of [['challan','Slip Creator'],['income','Income Assessment']]) {
+        for(const [tool,name] of [['margin','Margin Finder'],['loan','Loan Schedule'],['challan','Slip Creator'],['income','Income Assessment']]) {
           const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';
           input.checked=user.uid===owner.uid || user[tool]===true;input.disabled=user.uid===owner.uid;
           label.append(input,document.createTextNode(name));fields[tool]=input;row.append(label);
@@ -50,10 +56,10 @@
         else {
           const save=document.createElement('button');save.type='button';save.textContent='Save access';row.append(save);
           save.addEventListener('click',async()=>{
-            save.disabled=true;fields.challan.disabled=true;fields.income.disabled=true;status.textContent='Saving…';
-            try{await firebase.saveToolAccess(user.uid,{challan:fields.challan.checked,income:fields.income.checked});status.textContent='Access saved for '+user.email+'.';}
+            save.disabled=true;Object.values(fields).forEach(input=>input.disabled=true);status.textContent='Saving…';
+            try{await firebase.saveToolAccess(user.uid,Object.fromEntries(restrictedTools.map(tool=>[tool,fields[tool].checked])));status.textContent='Access saved for '+user.email+'.';}
             catch(error){status.textContent=error.message;}
-            finally{save.disabled=false;fields.challan.disabled=false;fields.income.disabled=false;}
+            finally{save.disabled=false;Object.values(fields).forEach(input=>input.disabled=false);}
           });
         }
         list.append(row);

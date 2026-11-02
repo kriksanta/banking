@@ -1,0 +1,16 @@
+body #logout-app{display:none!important}
+.profile-control{position:relative;flex:none}
+body .profile-toggle{display:grid;place-items:center;width:40px;height:40px;padding:9px;border-radius:50%}
+.profile-toggle svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.profile-dropdown{position:absolute;right:0;top:calc(100% + 10px);z-index:50;min-width:156px;padding:6px;border:1px solid var(--edge);border-radius:12px;background:var(--paper-high);box-shadow:0 8px 24px var(--cast)}
+body .profile-dropdown button{display:block;width:100%;padding:12px;text-align:left;border:0;border-radius:7px;box-shadow:none;background:transparent;color:var(--ink);font:inherit;font-size:.85rem}
+body .profile-dropdown button:hover{background:var(--paper-low)}
+.user-settings{box-sizing:border-box;width:min(460px,calc(100% - 24px));max-height:calc(100dvh - 32px);padding:24px;border:1px solid var(--edge);border-radius:18px;background:var(--paper);color:var(--ink);box-shadow:0 18px 60px #0005;overflow:auto}
+.user-settings::backdrop{background:#0c203b88}
+.user-settings-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.user-settings h2{margin:0;font-size:1.3rem}
+body .user-settings-heading button{padding:3px 9px;background:transparent;color:var(--ink);border:0;box-shadow:none;font-size:1.6rem}
+.profile-exp{display:flex;align-items:center;justify-content:space-between;padding:16px;margin-top:18px;border:1px solid var(--edge);border-radius:12px;background:var(--paper-high)}.profile-exp span{font-size:.8rem;font-weight:700;letter-spacing:.1em}.profile-exp strong{font-size:1.5rem;color:var(--ink)}
+.user-settings form,.profile-access-request{display:grid;gap:10px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.user-settings h3{font-size:1rem;margin:0 0 3px}.user-settings label{font-size:.82rem;font-weight:650}.user-settings input{box-sizing:border-box;width:100%;min-height:44px}.user-settings small,.user-settings p{font-size:.78rem;line-height:1.5;color:var(--muted);margin:0}
+body .user-settings form button,body .profile-access-request button{min-height:44px;padding:10px 14px;border:1px solid var(--edge);border-radius:9px;background:var(--paper-high);color:var(--ink);font:inherit;font-size:.85rem;font-weight:650}
+@media(max-width:640px){.user-settings{width:100%;max-width:100%;max-height:100dvh;height:100dvh;margin:0;border:0;border-radius:0;padding:calc(20px + env(safe-area-inset-top,0px)) 20px calc(24px + env(safe-area-inset-bottom,0px))}.profile-toggle{touch-action:manipulation}}

@@ -1,5 +1,5 @@
 (() => {
-  const service=import('./firebase-service.js?v=20261101a');
+  const service=import('./firebase-service.js?v=20261102c');
   const panel=document.querySelector('#admin-panel'),grid=document.querySelector('#admin-hub-grid');
   const paths={
     approvals:'M9 11l2 2 4-4M8 4h8l2 2v15H6V6l2-2zM9 4V2h6v2',

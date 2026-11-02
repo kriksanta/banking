@@ -1,5 +1,5 @@
 (() => {
-  const service=import('./firebase-service.js?v=20261101a');
+  const service=import('./firebase-service.js?v=20261102c');
   const list=document.querySelector('#approval-requests-list'),status=document.querySelector('#approval-requests-status');
   const badge=document.querySelector('#approval-pending-count'),header=document.querySelector('#open-firebase-admin');
   let stop=()=>{},generation=0;

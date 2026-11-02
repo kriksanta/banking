@@ -1,6 +1,6 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js';
 import {getAuth, setPersistence, browserLocalPersistence, onAuthStateChanged, signInWithEmailAndPassword,
-  signOut, EmailAuthProvider, reauthenticateWithCredential, updatePassword, createUserWithEmailAndPassword,
+  signOut, EmailAuthProvider, reauthenticateWithCredential, updatePassword, updateProfile, createUserWithEmailAndPassword,
   sendEmailVerification, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js';
 import {getFirestore, doc, getDoc, setDoc, updateDoc, collection, query, orderBy, limit, getDocs, onSnapshot, where, getCountFromServer, Timestamp,
   serverTimestamp, writeBatch} from 'https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js';
@@ -72,7 +72,7 @@ export async function currentAccount() {
   const isAdmin=role.exists() && role.data().admin === true;
   const access=isAdmin?null:await getDoc(doc(db,'accountAccess',user.uid));
   const status=isAdmin?'approved':access?.data()?.status || 'pending';
-  return {uid:user.uid,email:user.email,username:user.email,admin:isAdmin,approved:status==='approved',status};
+  return {uid:user.uid,email:user.email,username:user.displayName||user.email,admin:isAdmin,approved:status==='approved',status};
 }
 export async function requestAccountAccess() {
   const user=auth.currentUser;if(!user || user.isAnonymous)return;
@@ -129,19 +129,19 @@ export async function accountDashboard() {
 }
 export async function allowedTools() {
   const user=await currentAccount();
-  if(!user?.approved)return {challan:false,income:false};
-  if(user.admin)return {challan:true,income:true};
+  if(!user?.approved)return {margin:false,loan:false,challan:false,income:false};
+  if(user.admin)return {margin:true,loan:true,challan:true,income:true};
   const access=await getDoc(doc(db,'toolAccess',user.uid));
-  return {challan:access.data()?.challan===true,income:access.data()?.income===true};
+  return {margin:access.data()?.margin===true,loan:access.data()?.loan===true,challan:access.data()?.challan===true,income:access.data()?.income===true};
 }
 export function watchAllowedTools(receive,fail) {
   let stops=[],cancelled=false;
   currentAccount().then(user=>{
     if(cancelled)return;
-    if(!user){receive({challan:false,income:false});return;}
-    if(user.admin){receive({challan:true,income:true});return;}
+    if(!user){receive({margin:false,loan:false,challan:false,income:false});return;}
+    if(user.admin){receive({margin:true,loan:true,challan:true,income:true});return;}
     let approved=false,tools={},approvalReady=false,toolsReady=false;
-    const emit=()=>{if(approvalReady && (toolsReady || !approved))receive({challan:approved&&tools.challan===true,income:approved&&tools.income===true});};
+    const emit=()=>{if(approvalReady && (toolsReady || !approved))receive({margin:approved&&tools.margin===true,loan:approved&&tools.loan===true,challan:approved&&tools.challan===true,income:approved&&tools.income===true});};
     stops.push(onSnapshot(doc(db,'accountAccess',user.uid),snapshot=>{approved=snapshot.data()?.status==='approved';approvalReady=true;emit();},fail));
     stops.push(onSnapshot(doc(db,'toolAccess',user.uid),snapshot=>{tools=snapshot.data()||{};toolsReady=true;emit();},fail));
   }).catch(fail);
@@ -155,7 +155,7 @@ export async function listToolAccess() {
 }
 export async function saveToolAccess(uid,tools) {
   await admin();
-  await setDoc(doc(db,'toolAccess',uid),{challan:tools.challan===true,income:tools.income===true,updatedAt:serverTimestamp()});
+  await setDoc(doc(db,'toolAccess',uid),{margin:tools.margin===true,loan:tools.loan===true,challan:tools.challan===true,income:tools.income===true,updatedAt:serverTimestamp()});
 }
 
 export async function changeAccount(username,currentPassword,newPassword) {
@@ -221,4 +221,45 @@ export async function listIssues() {
 export async function setIssueStatus(id,status) {
   try {await admin();if(!['open','closed'].includes(status))throw new Error('Invalid issue status.');await updateDoc(doc(db,'issues',id),{status,updatedAt:serverTimestamp()});}
   catch(error){throw friendly(error);}
+}
+
+// Points contain event metadata and a digest, never calculation input values.
+export const pointsDay = () => Math.floor((Date.now()+19800000)/86400000);
+export function watchPoints(receive,fail=()=>{}) {
+  const user=auth.currentUser;if(!user)return ()=>{};
+  return onSnapshot(collection(db,'points',user.uid,'events'),snapshot=>receive(snapshot.docs.reduce((sum,item)=>sum+item.data().points,0)),fail);
+}
+export async function awardPoints(kind,tool='',signature='') {
+  const user=await currentAccount();if(!user?.approved)return false;
+  if(kind!=='daily'&&kind!=='calculation')throw new Error('Invalid points event.');
+  if(kind==='calculation'){
+    if(!['denomination','waiver','margin','loan','challan','income'].includes(tool))throw new Error('Invalid tool.');
+    if(!['denomination','waiver'].includes(tool)&&!(await allowedTools())[tool])throw new Error('Tool access required.');
+  }
+  const day=pointsDay();
+  const bytes=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(signature));
+  const fingerprint=Array.from(new Uint8Array(bytes),value=>value.toString(16).padStart(2,'0')).join('');
+  const id=kind==='daily'?'daily_'+day:'calc_'+day+'_'+tool+'_'+fingerprint;
+  const ref=doc(db,'points',user.uid,'events',id);
+  if((await getDoc(ref)).exists())return false;
+  try{await setDoc(ref,{kind,tool,points:kind==='daily'?5:2,day,fingerprint,createdAt:serverTimestamp()});return true;}
+  catch(error){if((await getDoc(ref)).exists())return false;throw error;}
+}
+
+export async function saveMyUsername(username) {
+  username=String(username).trim();
+  if(!/^[a-zA-Z0-9_.-]{3,40}$/.test(username))throw new Error('Use 3–40 letters, numbers, dots, hyphens or underscores.');
+  if(!(await currentAccount())?.approved)throw new Error('Please sign in with an approved account.');
+  try{await updateProfile(auth.currentUser,{displayName:username});}catch(error){throw friendly(error);}
+}
+export async function changeMyPassword(currentPassword,newPassword) {
+  if(!(await currentAccount())?.approved)throw new Error('Please sign in with an approved account.');
+  if(!newPassword||newPassword.length<10||newPassword.length>128)throw new Error('Use a password with 10–128 characters.');
+  const user=auth.currentUser;
+  try{await reauthenticateWithCredential(user,EmailAuthProvider.credential(user.email,currentPassword));await updatePassword(user,newPassword);}
+  catch(error){throw friendly(error);}
+}
+export async function requestMoreAccess() {
+  const account=await currentAccount();if(!account?.approved)throw new Error('Please sign in with an approved account.');
+  await submitIssue(account.username||account.email,'Access request\nAccount: '+account.email+'\nPlease review my access.','');
 }

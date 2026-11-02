@@ -43,12 +43,33 @@ service cloud.firestore {
           || (exists(/databases/$(database)/documents/accounts/$(uid)) && request.resource.data.createdAt == resource.data.createdAt));
       allow delete: if false;
     }
+
+    match /points/{uid}/events/{eventId} {
+      allow read: if admin() || (signedIn() && request.auth.uid == uid);
+      allow create: if approved() && request.auth.uid == uid
+        && request.resource.data.keys().hasOnly(['kind','tool','points','day','fingerprint','createdAt'])
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.day == int((request.time.toMillis() + 19800000) / 86400000)
+        && request.resource.data.fingerprint is string
+        && request.resource.data.fingerprint.matches('^[a-f0-9]{64}$')
+        && ((request.resource.data.kind == 'daily' && request.resource.data.points == 5
+          && request.resource.data.tool == '' && eventId == 'daily_' + string(request.resource.data.day))
+        || (request.resource.data.kind == 'calculation' && request.resource.data.points == 2
+          && request.resource.data.tool in ['denomination','waiver','margin','loan','challan','income']
+          && (request.resource.data.tool in ['denomination','waiver'] || admin()
+            || (exists(/databases/$(database)/documents/toolAccess/$(uid))
+              && get(/databases/$(database)/documents/toolAccess/$(uid)).data.get(request.resource.data.tool,false) == true))
+          && eventId == 'calc_' + string(request.resource.data.day) + '_' + request.resource.data.tool + '_' + request.resource.data.fingerprint));
+      allow update, delete: if false;
+    }
     match /toolAccess/{uid} {
       allow get: if admin() || (signedIn() && request.auth.uid == uid);
       allow list: if admin();
       allow create, update: if admin()
-        && request.resource.data.keys().hasOnly(['challan','income','updatedAt'])
+        && request.resource.data.keys().hasOnly(['margin','loan','challan','income','updatedAt'])
         && request.resource.data.challan is bool && request.resource.data.income is bool
+        && (!('margin' in request.resource.data) || request.resource.data.margin is bool)
+        && (!('loan' in request.resource.data) || request.resource.data.loan is bool)
         && request.resource.data.updatedAt == request.time;
       allow delete: if false;
     }

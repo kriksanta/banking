@@ -1,6 +1,6 @@
 (() => {
   const panel=document.querySelector('#admin-panel'),issueCard=document.querySelector('#issue-card');
-  const service=import('./firebase-service.js?v=20261101a');
+  const service=import('./firebase-service.js?v=20261102c');
   const adminPortalButton=document.querySelector('#open-firebase-admin');
   let adminUser=null,loadingInbox=false,savingMargins=false,savedNotice='',needsMarginImport=false,loadingActivity=false;
   function message(id,text,state='') {const element=document.querySelector('#'+id);element.textContent=text;element.dataset.state=state;}

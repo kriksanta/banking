@@ -10,7 +10,7 @@ function block() {
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',show,{once:true});else show();
 }
-import('./firebase-service.js?v=20261101a').then(({watchAllowedTools})=>watchAllowedTools(access=>{
+import('./firebase-service.js?v=20261102c').then(({watchAllowedTools})=>watchAllowedTools(access=>{
   if(!access[tool])block();
   else if(denied)location.reload();
   else document.documentElement.removeAttribute('data-tool-access');
