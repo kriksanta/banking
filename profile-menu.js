@@ -2,7 +2,7 @@
   const service=import('./firebase-service.js?v=20261102c');
   const logout=document.querySelector('#logout-app');
   const profile=document.createElement('div');profile.className='profile-control';
-  profile.innerHTML='<button type="button" class="profile-toggle" aria-label="Your account" aria-expanded="false" aria-controls="profile-dropdown"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3"/></svg></button><div id="profile-dropdown" class="profile-dropdown" hidden><button type="button" data-profile-settings>Settings</button><button type="button" data-profile-logout>Logout</button></div>';
+  profile.innerHTML='<button type="button" class="profile-toggle" aria-label="Your account" aria-expanded="false" aria-controls="profile-dropdown"><img class="profile-avatar" src="./profile-avatar.png" width="40" height="40" alt="" aria-hidden="true"></button><div id="profile-dropdown" class="profile-dropdown" hidden><button type="button" data-profile-settings>Settings</button><button type="button" data-profile-logout>Logout</button></div>';
   logout.before(profile);logout.hidden=true;
   const toggle=profile.querySelector('.profile-toggle'),dropdown=profile.querySelector('#profile-dropdown');
   function closeMenu(){dropdown.hidden=true;toggle.setAttribute('aria-expanded','false');}
