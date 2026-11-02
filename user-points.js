@@ -1,20 +1,13 @@
 (() => {
   const service=import('./firebase-service.js?v=20261102c');
-  const menu=document.querySelector('#tool-menu');
-  const summary=document.createElement('div');summary.className='points-summary';
-  const total=document.createElement('strong');total.textContent='Points: —';
-  const status=document.createElement('span');status.setAttribute('role','status');
-  summary.append(total,status);menu.prepend(summary);
-  let generation=0,stop=()=>{};
+  let generation=0;
   async function refresh(){
-    const version=++generation;stop();total.textContent='Points: —';status.textContent='';
+    const version=++generation;
     try{
       const firebase=await service,account=await firebase.currentAccount();
       if(version!==generation||!account?.approved)return;
-      stop=firebase.watchPoints(points=>{if(version===generation)total.textContent='Points: '+points;});
-      const earned=await firebase.awardPoints('daily');
-      if(earned&&version===generation)status.textContent='+5 daily login';
-    }catch(error){if(version===generation)status.textContent='Points are not connected yet.';}
+      await firebase.awardPoints('daily');
+    }catch(error){/* Daily rewards retry on the next visit; EXP is shown in Settings. */}
   }
   const toolIds=['denomination','waiver','loan','margin'];
   for(const tool of toolIds){
