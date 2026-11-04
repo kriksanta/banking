@@ -1,0 +1,1675 @@
+[
+  {
+    "id": 1,
+    "action": "Open help",
+    "keys": "F1",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 2,
+    "action": "Undo last action",
+    "keys": "Ctrl + Z",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 3,
+    "action": "Redo last action",
+    "keys": "Ctrl + Y",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 4,
+    "action": "Copy selection",
+    "keys": "Ctrl + C",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 5,
+    "action": "Repeat last action",
+    "keys": "F4",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 6,
+    "action": "Cut selection",
+    "keys": "Ctrl + X",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 7,
+    "action": "Paste content from clipboard",
+    "keys": "Ctrl + V",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 8,
+    "action": "Display the Paste Special dialog box",
+    "keys": "Ctrl + Alt + V",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 9,
+    "action": "Display find and replace with Find tab selected",
+    "keys": "Ctrl + F",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 10,
+    "action": "Display find and replace with Replace tab selected",
+    "keys": "Ctrl + H",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 11,
+    "action": "Find previous match (after initial Find)",
+    "keys": "Ctrl + Shift + F4",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 12,
+    "action": "Find next match (after initial Find)",
+    "keys": "Shift + F4",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 13,
+    "action": "Insert embedded chart",
+    "keys": "Alt + F1",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 14,
+    "action": "Insert chart in new sheet",
+    "keys": "F11",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 15,
+    "action": "Toggle AutoFilter",
+    "keys": "Ctrl + Shift + L",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 16,
+    "action": "Activate filter",
+    "keys": "Alt + ↓",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 17,
+    "action": "Create table",
+    "keys": "Ctrl + T",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 18,
+    "action": "Select table row",
+    "keys": "Shift + Space",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 19,
+    "action": "Select table column",
+    "keys": "Ctrl + Space",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 20,
+    "action": "Select table (when active cell is in table)",
+    "keys": "Ctrl + A",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 21,
+    "action": "Clear slicer filter",
+    "keys": "Alt + C",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 22,
+    "action": "Run Spellcheck",
+    "keys": "F7",
+    "category": "General",
+    "page": 3
+  },
+  {
+    "id": 23,
+    "action": "Open Thesaurus",
+    "keys": "Shift + F7",
+    "category": "General",
+    "page": 4
+  },
+  {
+    "id": 24,
+    "action": "Open Macro dialog box",
+    "keys": "Alt + F8",
+    "category": "General",
+    "page": 4
+  },
+  {
+    "id": 25,
+    "action": "Open VBA Editor",
+    "keys": "Alt + F11",
+    "category": "General",
+    "page": 4
+  },
+  {
+    "id": 26,
+    "action": "Duplicate object",
+    "keys": "Ctrl + D",
+    "category": "General",
+    "page": 4
+  },
+  {
+    "id": 27,
+    "action": "Snap to grid (whilst dragging)",
+    "keys": "Alt",
+    "category": "General",
+    "page": 4
+  },
+  {
+    "id": 28,
+    "action": "Hide or show objects",
+    "keys": "Ctrl + 6",
+    "category": "General",
+    "page": 4
+  },
+  {
+    "id": 29,
+    "action": "Open Modify Cell Style dialog box",
+    "keys": "Alt + '",
+    "category": "General",
+    "page": 4
+  },
+  {
+    "id": 30,
+    "action": "Show right-click menu",
+    "keys": "Shift + F10",
+    "category": "General",
+    "page": 4
+  },
+  {
+    "id": 31,
+    "action": "Display control menu",
+    "keys": "Alt Space",
+    "category": "General",
+    "page": 4
+  },
+  {
+    "id": 32,
+    "action": "Insert new worksheet",
+    "keys": "Shift + F11",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 33,
+    "action": "Go to next worksheet",
+    "keys": "Ctrl + PgDn",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 34,
+    "action": "Go to previous worksheet",
+    "keys": "Ctrl + PgUp",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 35,
+    "action": "Rename current worksheet",
+    "keys": "Alt + O, H R",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 36,
+    "action": "Delete current worksheet",
+    "keys": "Alt + E, L",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 37,
+    "action": "Move current worksheet",
+    "keys": "Alt + E, M",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 38,
+    "action": "Move between the worksheet, Ribbon, task pane and zoom controls in a worksheet that has been split",
+    "keys": "F6 OR Shift + F6",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 39,
+    "action": "Select adjacent worksheets",
+    "keys": "Ctrl + Shift + PgUp/PgDn",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 40,
+    "action": "Select non-adjacent worksheets",
+    "keys": "Ctrl + Click",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 41,
+    "action": "Toggle scroll lock",
+    "keys": "ScrLk",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 42,
+    "action": "Toggle full screen",
+    "keys": "Ctrl + Shift + F1",
+    "category": "Worksheet",
+    "page": 4
+  },
+  {
+    "id": 43,
+    "action": "Print",
+    "keys": "Ctrl + P",
+    "category": "Worksheet",
+    "page": 5
+  },
+  {
+    "id": 44,
+    "action": "Open print preview window",
+    "keys": "Ctrl + F2",
+    "category": "Worksheet",
+    "page": 5
+  },
+  {
+    "id": 45,
+    "action": "Set print area",
+    "keys": "Alt + P, R S",
+    "category": "Worksheet",
+    "page": 5
+  },
+  {
+    "id": 46,
+    "action": "Clear print area",
+    "keys": "Alt + P, R C",
+    "category": "Worksheet",
+    "page": 5
+  },
+  {
+    "id": 47,
+    "action": "Zoom in",
+    "keys": "Ctrl + Mouse Wheel Up",
+    "category": "Worksheet",
+    "page": 5
+  },
+  {
+    "id": 48,
+    "action": "Zoom out",
+    "keys": "Ctrl + Mouse Wheel Down",
+    "category": "Worksheet",
+    "page": 5
+  },
+  {
+    "id": 49,
+    "action": "Protect sheet",
+    "keys": "Alt + R, P S",
+    "category": "Worksheet",
+    "page": 5
+  },
+  {
+    "id": 50,
+    "action": "Create new workbook",
+    "keys": "Ctrl + N",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 51,
+    "action": "Open workbook",
+    "keys": "Ctrl + O",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 52,
+    "action": "Save workbook",
+    "keys": "Ctrl + S",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 53,
+    "action": "Save as",
+    "keys": "F12",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 54,
+    "action": "Go to next workbook",
+    "keys": "Ctrl + Tab",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 55,
+    "action": "Go to previous workbook",
+    "keys": "Ctrl + Shift + Tab",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 56,
+    "action": "Minimize current workbook window",
+    "keys": "Ctrl + F9",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 57,
+    "action": "Maximize current workbook window",
+    "keys": "Ctrl + F10",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 58,
+    "action": "Protect workbook",
+    "keys": "Alt + R, P W",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 59,
+    "action": "Close current workbook",
+    "keys": "Ctrl + F4",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 60,
+    "action": "Close Excel",
+    "keys": "Alt + F4",
+    "category": "Workbook",
+    "page": 5
+  },
+  {
+    "id": 61,
+    "action": "Expand or collapse ribbon",
+    "keys": "Ctrl + F1",
+    "category": "Ribbon",
+    "page": 6
+  },
+  {
+    "id": 62,
+    "action": "Activate access keys",
+    "keys": "Alt",
+    "category": "Ribbon",
+    "page": 6
+  },
+  {
+    "id": 63,
+    "action": "Move through Ribbon tabs and groups",
+    "keys": "→ ← ↑ ↓",
+    "category": "Ribbon",
+    "page": 6
+  },
+  {
+    "id": 64,
+    "action": "Activate or open selected control",
+    "keys": "Space OR Enter",
+    "category": "Ribbon",
+    "page": 6
+  },
+  {
+    "id": 65,
+    "action": "Confirm control change",
+    "keys": "Enter",
+    "category": "Ribbon",
+    "page": 6
+  },
+  {
+    "id": 66,
+    "action": "Get help on selected control",
+    "keys": "F1",
+    "category": "Ribbon",
+    "page": 6
+  },
+  {
+    "id": 67,
+    "action": "Drag and cut",
+    "keys": "Drag",
+    "category": "Drag and Drop (After Selecting Cells)",
+    "page": 6
+  },
+  {
+    "id": 68,
+    "action": "Drag and copy",
+    "keys": "Ctrl + Drag",
+    "category": "Drag and Drop (After Selecting Cells)",
+    "page": 6
+  },
+  {
+    "id": 69,
+    "action": "Drag and insert",
+    "keys": "Shift + Drag",
+    "category": "Drag and Drop (After Selecting Cells)",
+    "page": 6
+  },
+  {
+    "id": 70,
+    "action": "Drag and insert copy",
+    "keys": "Ctrl + Shift + Drag",
+    "category": "Drag and Drop (After Selecting Cells)",
+    "page": 6
+  },
+  {
+    "id": 71,
+    "action": "Drag to worksheet",
+    "keys": "Alt + Drag",
+    "category": "Drag and Drop (After Selecting Cells)",
+    "page": 6
+  },
+  {
+    "id": 72,
+    "action": "Drag to duplicate worksheet",
+    "keys": "Ctrl + Drag",
+    "category": "Drag and Drop (After Selecting Cells)",
+    "page": 6
+  },
+  {
+    "id": 73,
+    "action": "Move one cell right",
+    "keys": "→",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 74,
+    "action": "Move one cell left",
+    "keys": "←",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 75,
+    "action": "Move one cell up",
+    "keys": "↑",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 76,
+    "action": "Move one cell down",
+    "keys": "↓",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 77,
+    "action": "Move one screen right",
+    "keys": "Alt + PgDn",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 78,
+    "action": "Move one screen left",
+    "keys": "Alt + PgUp",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 79,
+    "action": "Move one screen up",
+    "keys": "PgUp",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 80,
+    "action": "Move one screen down",
+    "keys": "PgDn",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 81,
+    "action": "Move to right edge of data region",
+    "keys": "Ctrl + →",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 82,
+    "action": "Move to left edge of data region",
+    "keys": "Ctrl + ←",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 83,
+    "action": "Move to top edge of data region",
+    "keys": "Ctrl + ↑",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 84,
+    "action": "Move to bottom edge of data region",
+    "keys": "Ctrl + ↓",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 85,
+    "action": "Move to beginning of row",
+    "keys": "Home",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 86,
+    "action": "Move to last cell in worksheet that contains data",
+    "keys": "Ctrl + End",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 87,
+    "action": "Move to first cell in worksheet",
+    "keys": "Ctrl + Home",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 88,
+    "action": "Turn End mode on",
+    "keys": "End",
+    "category": "Navigation",
+    "page": 7
+  },
+  {
+    "id": 89,
+    "action": "Select active cell (when multiple cells already selected)",
+    "keys": "Shift + Backspace",
+    "category": "Active Cell",
+    "page": 8
+  },
+  {
+    "id": 90,
+    "action": "Show the active cell on worksheet",
+    "keys": "Ctrl + Backspace",
+    "category": "Active Cell",
+    "page": 8
+  },
+  {
+    "id": 91,
+    "action": "Move active cell clockwise to corners of selection",
+    "keys": "Ctrl + .",
+    "category": "Active Cell",
+    "page": 8
+  },
+  {
+    "id": 92,
+    "action": "Move active cell down in selection - wrap to next column",
+    "keys": "Enter",
+    "category": "Active Cell",
+    "page": 8
+  },
+  {
+    "id": 93,
+    "action": "Move active cell up in selection - wrap to previous column",
+    "keys": "Shift + Enter",
+    "category": "Active Cell",
+    "page": 8
+  },
+  {
+    "id": 94,
+    "action": "Move active cell right in a selection - wrap to next row",
+    "keys": "Tab",
+    "category": "Active Cell",
+    "page": 8
+  },
+  {
+    "id": 95,
+    "action": "Move active cell left in a selection - wrap to previous row",
+    "keys": "Shift + Tab",
+    "category": "Active Cell",
+    "page": 8
+  },
+  {
+    "id": 96,
+    "action": "Select entire row",
+    "keys": "Shift + Space",
+    "category": "Selection",
+    "page": 8
+  },
+  {
+    "id": 97,
+    "action": "Select entire column",
+    "keys": "Ctrl + Space",
+    "category": "Selection",
+    "page": 8
+  },
+  {
+    "id": 98,
+    "action": "Select current region if worksheet contains data. Press again to select current region and summary rows. Press again to select entire worksheet.",
+    "keys": "Ctrl + A",
+    "category": "Selection",
+    "page": 8
+  },
+  {
+    "id": 99,
+    "action": "Expand selection",
+    "keys": "Shift + Click",
+    "category": "Selection",
+    "page": 8
+  },
+  {
+    "id": 100,
+    "action": "Add non-adjacent cells to selection",
+    "keys": "Ctrl + Click",
+    "category": "Selection",
+    "page": 8
+  },
+  {
+    "id": 101,
+    "action": "Move right between non-adjacent selections",
+    "keys": "Ctrl + Alt + →",
+    "category": "Selection",
+    "page": 8
+  },
+  {
+    "id": 102,
+    "action": "Move left between non-adjacent selections",
+    "keys": "Ctrl + Alt + ←",
+    "category": "Selection",
+    "page": 8
+  },
+  {
+    "id": 103,
+    "action": "Toggle 'Add to Selection' mode",
+    "keys": "Shift + F8",
+    "category": "Selection",
+    "page": 8
+  },
+  {
+    "id": 104,
+    "action": "Exit 'Add to Selection' mode",
+    "keys": "Esc",
+    "category": "Selection",
+    "page": 8
+  },
+  {
+    "id": 105,
+    "action": "Extend selection right",
+    "keys": "Shift + →",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 106,
+    "action": "Extend selection left",
+    "keys": "Shift + ←",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 107,
+    "action": "Extend selection up",
+    "keys": "Shift + ↑",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 108,
+    "action": "Extend selection down",
+    "keys": "Shift + ↓",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 109,
+    "action": "Extend the selection to the last cell on the right that contains data, or to the next cell that contains data, or to the last column",
+    "keys": "Ctrl + Shift + →",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 110,
+    "action": "Extend the selection to the last cell on the left that contains data, or to the next cell that contains data, or to the first column",
+    "keys": "Ctrl + Shift + ←",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 111,
+    "action": "Extend the selection to the last cell up that contains data, or to the next cell that contains data, or to the first row",
+    "keys": "Ctrl + Shift + ↑",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 112,
+    "action": "Extend the selection to the last cell down that contains data, or to the next cell that contains data, or to the last row",
+    "keys": "Ctrl + Shift + ↓",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 113,
+    "action": "Extend selection up one screen",
+    "keys": "Shift + PgUp",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 114,
+    "action": "Extend selection down one screen",
+    "keys": "Shift + PgDn",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 115,
+    "action": "Extend selection right one screen",
+    "keys": "Alt + Shift + PgDn",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 116,
+    "action": "Extend selection left one screen",
+    "keys": "Alt + Shift + PgUp",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 117,
+    "action": "Extend selection to start of row(s)",
+    "keys": "Shift + Home",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 118,
+    "action": "Extend selection to first cell in worksheet",
+    "keys": "Ctrl + Shift + Home",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 119,
+    "action": "Extend selection to last cell in worksheet",
+    "keys": "Ctrl + Shift + End",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 120,
+    "action": "Toggle 'Extend Selection' mode",
+    "keys": "F8",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 121,
+    "action": "Cancel 'Extend Selection' mode",
+    "keys": "Esc",
+    "category": "Extend Selection",
+    "page": 9
+  },
+  {
+    "id": 122,
+    "action": "Display 'Go To' dialog box",
+    "keys": "Ctrl + G OR F5",
+    "category": "Select Special",
+    "page": 10
+  },
+  {
+    "id": 123,
+    "action": "Select cells with comments",
+    "keys": "Ctrl + Shift + O",
+    "category": "Select Special",
+    "page": 10
+  },
+  {
+    "id": 124,
+    "action": "Select current region around active cell",
+    "keys": "Ctrl + Shift + *",
+    "category": "Select Special",
+    "page": 10
+  },
+  {
+    "id": 125,
+    "action": "Select current region",
+    "keys": "Ctrl + A",
+    "category": "Select Special",
+    "page": 10
+  },
+  {
+    "id": 126,
+    "action": "Select direct precedents",
+    "keys": "Ctrl + [",
+    "category": "Select Special",
+    "page": 10
+  },
+  {
+    "id": 127,
+    "action": "Select all precedents",
+    "keys": "Ctrl + Shift + {",
+    "category": "Select Special",
+    "page": 10
+  },
+  {
+    "id": 128,
+    "action": "Select direct dependents",
+    "keys": "Ctrl + ]",
+    "category": "Select Special",
+    "page": 10
+  },
+  {
+    "id": 129,
+    "action": "Select all dependents",
+    "keys": "Ctrl + Shift + }",
+    "category": "Select Special",
+    "page": 10
+  },
+  {
+    "id": 130,
+    "action": "Select visible cells only",
+    "keys": "Alt + ;",
+    "category": "Select Special",
+    "page": 10
+  },
+  {
+    "id": 131,
+    "action": "Edit the active cell",
+    "keys": "F2",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 132,
+    "action": "Insert or edit comment",
+    "keys": "Shift + F2",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 133,
+    "action": "Delete comment",
+    "keys": "Shift + F10, M",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 134,
+    "action": "Cancel editing",
+    "keys": "Esc",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 135,
+    "action": "Select one character right",
+    "keys": "Shift + →",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 136,
+    "action": "Select one character left",
+    "keys": "Shift + ←",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 137,
+    "action": "Move one word right",
+    "keys": "Ctrl + →",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 138,
+    "action": "Move one word left",
+    "keys": "Ctrl + ←",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 139,
+    "action": "Select one word right",
+    "keys": "Ctrl + Shift + →",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 140,
+    "action": "Select one word left",
+    "keys": "Ctrl + Shift + ←",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 141,
+    "action": "Select to beginning of cell",
+    "keys": "Shift + Home",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 142,
+    "action": "Select to end of cell",
+    "keys": "Shift + End",
+    "category": "Cell Edit Mode",
+    "page": 10
+  },
+  {
+    "id": 143,
+    "action": "Delete to end of line",
+    "keys": "Ctrl + Delete",
+    "category": "Cell Edit Mode",
+    "page": 11
+  },
+  {
+    "id": 144,
+    "action": "Delete character to left of cursor",
+    "keys": "Backspace",
+    "category": "Cell Edit Mode",
+    "page": 11
+  },
+  {
+    "id": 145,
+    "action": "Delete character to right of cursor",
+    "keys": "Delete",
+    "category": "Cell Edit Mode",
+    "page": 11
+  },
+  {
+    "id": 146,
+    "action": "Start a new line in the same cell",
+    "keys": "Alt + Enter",
+    "category": "Cell Edit Mode",
+    "page": 11
+  },
+  {
+    "id": 147,
+    "action": "Enter data and move down",
+    "keys": "Enter",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 148,
+    "action": "Enter data and move up",
+    "keys": "Shift + Enter",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 149,
+    "action": "Enter data and move right",
+    "keys": "Tab",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 150,
+    "action": "Enter data and move left",
+    "keys": "Shift + Tab",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 151,
+    "action": "Enter data and stay in same cell",
+    "keys": "Ctrl + Enter",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 152,
+    "action": "Enter same data in multiple cells (after copying, then selecting cells)",
+    "keys": "Enter",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 153,
+    "action": "Insert current date",
+    "keys": "Ctrl + ;",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 154,
+    "action": "Insert current time",
+    "keys": "Ctrl + Shift + :",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 155,
+    "action": "Fill down from cell above",
+    "keys": "Ctrl + D",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 156,
+    "action": "Fill right from cell on left",
+    "keys": "Ctrl + R",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 157,
+    "action": "Copy formula from cell above (formula is exact copy)",
+    "keys": "Ctrl + '",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 158,
+    "action": "Copy value from cell above",
+    "keys": "Ctrl + Shift + \"",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 159,
+    "action": "Insert hyperlink",
+    "keys": "Ctrl + K",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 160,
+    "action": "Display AutoComplete list",
+    "keys": "Alt + ↓",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 161,
+    "action": "Flash fill",
+    "keys": "Ctrl + E",
+    "category": "Entering Data",
+    "page": 11
+  },
+  {
+    "id": 162,
+    "action": "Format cells",
+    "keys": "Ctrl + 1",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 163,
+    "action": "Display Format Cells with Font tab selected",
+    "keys": "Ctrl + Shift + F",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 164,
+    "action": "Apply or remove bold",
+    "keys": "Ctrl + B",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 165,
+    "action": "Apply or remove italics",
+    "keys": "Ctrl + I",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 166,
+    "action": "Apply or remove underscore",
+    "keys": "Ctrl + U",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 167,
+    "action": "Apply or remove strikethrough",
+    "keys": "Ctrl + 5",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 168,
+    "action": "Align center",
+    "keys": "Alt + H, A C",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 169,
+    "action": "Align left",
+    "keys": "Alt + H, A L",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 170,
+    "action": "Align right",
+    "keys": "Alt + H, A R",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 171,
+    "action": "Indent",
+    "keys": "Alt + H, 6",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 172,
+    "action": "Remove indent",
+    "keys": "Alt + H, 5",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 173,
+    "action": "Wrap text",
+    "keys": "Alt + H, W",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 174,
+    "action": "Align top",
+    "keys": "Alt + H, A T",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 175,
+    "action": "Align middle",
+    "keys": "Alt + H, A M",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 176,
+    "action": "Align bottom",
+    "keys": "Alt + H, A B",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 177,
+    "action": "Increase font size one step",
+    "keys": "Alt + H, F G",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 178,
+    "action": "Decrease font size one step",
+    "keys": "Alt + H, F K",
+    "category": "Formatting",
+    "page": 12
+  },
+  {
+    "id": 179,
+    "action": "Apply general format",
+    "keys": "Ctrl + Shift + ~",
+    "category": "Number Formatting",
+    "page": 13
+  },
+  {
+    "id": 180,
+    "action": "Apply number format",
+    "keys": "Ctrl + Shift + !",
+    "category": "Number Formatting",
+    "page": 13
+  },
+  {
+    "id": 181,
+    "action": "Apply time format",
+    "keys": "Ctrl + Shift + @",
+    "category": "Number Formatting",
+    "page": 13
+  },
+  {
+    "id": 182,
+    "action": "Apply date format",
+    "keys": "Ctrl + Shift + #",
+    "category": "Number Formatting",
+    "page": 13
+  },
+  {
+    "id": 183,
+    "action": "Apply currency format",
+    "keys": "Ctrl + Shift + $",
+    "category": "Number Formatting",
+    "page": 13
+  },
+  {
+    "id": 184,
+    "action": "Apply percentage format",
+    "keys": "Ctrl + Shift + %",
+    "category": "Number Formatting",
+    "page": 13
+  },
+  {
+    "id": 185,
+    "action": "Apply scientific format",
+    "keys": "Ctrl + Shift + ^",
+    "category": "Number Formatting",
+    "page": 13
+  },
+  {
+    "id": 186,
+    "action": "Open list of border styles from Ribbon",
+    "keys": "Alt + H, B",
+    "category": "Borders",
+    "page": 13
+  },
+  {
+    "id": 187,
+    "action": "Add border around selected cells",
+    "keys": "Ctrl + Shift + &",
+    "category": "Borders",
+    "page": 13
+  },
+  {
+    "id": 188,
+    "action": "Add or remove right border",
+    "keys": "Alt + H, B R",
+    "category": "Borders",
+    "page": 13
+  },
+  {
+    "id": 189,
+    "action": "Add or remove left border",
+    "keys": "Alt + H, B L",
+    "category": "Borders",
+    "page": 13
+  },
+  {
+    "id": 190,
+    "action": "Add or remove top border",
+    "keys": "Alt + H, B P",
+    "category": "Borders",
+    "page": 13
+  },
+  {
+    "id": 191,
+    "action": "Add or remove bottom border",
+    "keys": "Alt + H, B O",
+    "category": "Borders",
+    "page": 13
+  },
+  {
+    "id": 192,
+    "action": "Add all borders to all cells in selection",
+    "keys": "Alt + H, B A",
+    "category": "Borders",
+    "page": 13
+  },
+  {
+    "id": 193,
+    "action": "Remove borders",
+    "keys": "Ctrl + Shift + -",
+    "category": "Borders",
+    "page": 13
+  },
+  {
+    "id": 194,
+    "action": "Begin entering a formula",
+    "keys": "= OR +",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 195,
+    "action": "Toggle absolute and relative references (in cell edit mode)",
+    "keys": "F4",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 196,
+    "action": "Open the Insert Function Dialog Box",
+    "keys": "Shift + F3",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 197,
+    "action": "Autosum",
+    "keys": "Alt + =",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 198,
+    "action": "Toggle displaying formulas on and off",
+    "keys": "Ctrl + `",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 199,
+    "action": "Insert function arguments",
+    "keys": "Ctrl + Shift + A",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 200,
+    "action": "Enter array formula",
+    "keys": "Ctrl + Shift + Enter",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 201,
+    "action": "Calculate worksheets",
+    "keys": "F9",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 202,
+    "action": "Calculate active worksheet",
+    "keys": "Shift + F9",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 203,
+    "action": "Force calculate all worksheets",
+    "keys": "Ctrl + Alt + F9",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 204,
+    "action": "Evaluate part of a formula (in cell edit mode)",
+    "keys": "F9",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 205,
+    "action": "Expand or collapse the formula bar",
+    "keys": "Ctrl + Shift + U",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 206,
+    "action": "Display function arguments dialog box",
+    "keys": "Ctrl + A",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 207,
+    "action": "Open Name Manager",
+    "keys": "Ctrl + F3",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 208,
+    "action": "Create name from values in row(s)/column(s)",
+    "keys": "Ctrl + Shift + F3",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 209,
+    "action": "Paste name into formula",
+    "keys": "F3",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 210,
+    "action": "Accept function with auto-complete",
+    "keys": "Tab",
+    "category": "Formulas",
+    "page": 14
+  },
+  {
+    "id": 211,
+    "action": "Display Insert Dialog box",
+    "keys": "Ctrl + +",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 212,
+    "action": "Insert selected number of rows",
+    "keys": "Ctrl + +",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 213,
+    "action": "Insert selected number of columns",
+    "keys": "Ctrl + +",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 214,
+    "action": "Display Delete dialog box",
+    "keys": "Ctrl + -",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 215,
+    "action": "Delete selected number of rows",
+    "keys": "Ctrl + -",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 216,
+    "action": "Delete selected number of columns",
+    "keys": "Ctrl + -",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 217,
+    "action": "Delete contents of selected cells",
+    "keys": "Delete",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 218,
+    "action": "Hide columns",
+    "keys": "Ctrl + 0",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 219,
+    "action": "Hide rows",
+    "keys": "Ctrl + 9",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 220,
+    "action": "Unhide rows",
+    "keys": "Ctrl + Shift + 9",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 221,
+    "action": "Group rows or columns (with rows/columns selected)",
+    "keys": "Alt + Shift + →",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 222,
+    "action": "Ungroup rows or columns (with rows/columns selected)",
+    "keys": "Alt + Shift + ←",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 223,
+    "action": "Open Group Dialog Box (no rows/cols selected)",
+    "keys": "Alt + Shift + →",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 224,
+    "action": "Open Ungroup Dialog Box",
+    "keys": "Alt + Shift + ←",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 225,
+    "action": "Hide or show outline symbols",
+    "keys": "Ctrl + 8",
+    "category": "Rows and Columns",
+    "page": 15
+  },
+  {
+    "id": 226,
+    "action": "Create pivot table",
+    "keys": "Alt + N, V",
+    "category": "Pivot Tables",
+    "page": 16
+  },
+  {
+    "id": 227,
+    "action": "Select entire pivot table",
+    "keys": "Ctrl + A",
+    "category": "Pivot Tables",
+    "page": 16
+  },
+  {
+    "id": 228,
+    "action": "Group pivot table items",
+    "keys": "Alt + Shift + →",
+    "category": "Pivot Tables",
+    "page": 16
+  },
+  {
+    "id": 229,
+    "action": "Ungroup pivot table items",
+    "keys": "Alt + Shift + ←",
+    "category": "Pivot Tables",
+    "page": 16
+  },
+  {
+    "id": 230,
+    "action": "Hide (filter out) pivot table item",
+    "keys": "Ctrl + -",
+    "category": "Pivot Tables",
+    "page": 16
+  },
+  {
+    "id": 231,
+    "action": "Unhide (clear filter on) pivot table item",
+    "keys": "Alt + H, S C",
+    "category": "Pivot Tables",
+    "page": 16
+  },
+  {
+    "id": 232,
+    "action": "Insert pivot chart",
+    "keys": "Alt + N, S Z C",
+    "category": "Pivot Tables",
+    "page": 16
+  },
+  {
+    "id": 233,
+    "action": "Move to next control",
+    "keys": "Tab",
+    "category": "Dialog Boxes",
+    "page": 16
+  },
+  {
+    "id": 234,
+    "action": "Move to previous control",
+    "keys": "Shift + Tab",
+    "category": "Dialog Boxes",
+    "page": 16
+  },
+  {
+    "id": 235,
+    "action": "Move to next tab",
+    "keys": "Ctrl + Tab",
+    "category": "Dialog Boxes",
+    "page": 16
+  },
+  {
+    "id": 236,
+    "action": "Move to previous tab",
+    "keys": "Ctrl + Shift + Tab",
+    "category": "Dialog Boxes",
+    "page": 16
+  },
+  {
+    "id": 237,
+    "action": "Accept and apply",
+    "keys": "Enter",
+    "category": "Dialog Boxes",
+    "page": 16
+  },
+  {
+    "id": 238,
+    "action": "Check and uncheck box",
+    "keys": "Space",
+    "category": "Dialog Boxes",
+    "page": 16
+  },
+  {
+    "id": 239,
+    "action": "Cancel and close the dialog box",
+    "keys": "Esc",
+    "category": "Dialog Boxes",
+    "page": 16
+  }
+]
