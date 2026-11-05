@@ -2,7 +2,7 @@
   const frames = Array.from(document.querySelectorAll('[data-print-tool-frame]'));
   function loadVisibleFrames() {
     frames.forEach(frame => {
-      if (frame.closest('.tool-panel').hidden) return;
+      if (frame.closest('.tool-panel').hidden) { if(frame.hasAttribute('data-stop-on-hide'))frame.removeAttribute('src'); return; }
       if (!frame.hasAttribute('src')) frame.src = frame.dataset.src;
     });
   }
@@ -21,6 +21,7 @@
     if (event.data?.type === 'cash-tool-frame-height' && Number.isFinite(event.data.height)) {
       frame.style.height = Math.min(18000, Math.max(600, event.data.height)) + 'px';
     }
+    if (event.data?.type === 'cash-tool-frame-scroll-top' && frame.hasAttribute('data-stop-on-hide')) frame.closest('.tool-panel').scrollIntoView({block:'start',behavior:'instant'});
     if (event.data?.type === 'cash-tool-back') frame.closest('.tool-panel').querySelector('[data-back-to-menu]').click();
   });
   loadVisibleFrames();
