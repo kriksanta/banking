@@ -1,6 +1,6 @@
 {
-  "version": "2026-11-07-waiver-collected",
+  "version": "2026-11-07-collected-entry",
   "backend": "firebase",
   "projectId": "cash-tool",
-  "displayVersion": "2026.11.07.3"
+  "displayVersion": "2026.11.07.4"
 }
