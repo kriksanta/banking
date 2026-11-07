@@ -1,6 +1,6 @@
 {
-  "version": "2026-11-07-visiting-card",
+  "version": "2026-11-07-waiver-percentage",
   "backend": "firebase",
   "projectId": "cash-tool",
-  "displayVersion": "2026.11.07.1"
+  "displayVersion": "2026.11.07.2"
 }
